@@ -58,13 +58,13 @@ replace langfam = "Indo-European|Germanic" if language_harmonized=="Norwegian"
 replace langfam = "Indo-European|Italic" if language_harmonized=="Spanish (MEX)"
 replace langfam = "Turkic" if language_harmonized=="Turkish"
 
-** summary langfam
-ta langfam // all language family Ns
-ta langfam if strpos(language_harm,"Engli")==0
-
 ** possible comparisons
 gen langfam_compare = "not Indo-European (5 families)"
 replace langfam_compare = langfam if langfam=="Indo-European|Germanic"
 replace langfam_compare = langfam if langfam=="Indo-European|Italic"
 replace langfam_compare = "English speakers" if strpos(language_harm,"Engli")>0
-ta langfam_compare
+
+** summary
+ta langfam // all families
+ta langfam if strpos(language_harm,"Engli")==0 // all families, no english speakers
+ta langfam_compare // possible grouping
