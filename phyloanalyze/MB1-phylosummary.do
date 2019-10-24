@@ -3,7 +3,7 @@
 
 clear all
 set more off
-cd ~/git/mb1-analysis-public
+cd ~/git/mb1-analysis-public // or wherever you cloned
 
 ** get mb data
 tempfile mb_baby
